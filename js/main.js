@@ -51,7 +51,6 @@ const posts = [
 
 const   postsContainer = document.getElementById('container');
         postsContainer.classList.add('posts-list');
-console.log(postsContainer)
 
 printPosts(postsContainer, posts);
 
@@ -89,7 +88,7 @@ function createDomElement(items) {
     // creo elemento x elemento seguendo la struttura in html
     const   postDom = document.createElement("div");
             postDom.classList.add('post');
-    postDom.innerHTML = `<div class="post__header">
+            postDom.innerHTML += `<div class="post__header">
                             <div class="post-meta">                    
                                 <div class="post-meta__icon">
                                     <img class="profile-pic" src="${items.media}" alt="${items.author.name}">                    
@@ -116,5 +115,6 @@ function createDomElement(items) {
                                     Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
                                  </div>
                             </div> 
-                        </div> `
+                        </div> `;
+                        return postDom
 }
